@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jul  5 12:32:00 2022
 
-@author: HAA4BP
-"""
 
 import csv
 import os
@@ -31,10 +26,10 @@ for root, dirs, files in os.walk(folder, topdown = False):
                                     continue
                                 else:
                                     for column in range(len(row)):
-                                        cells.append(row[column])
+                                        cells.append(row[column].replace("-","_"))
                                     
                             else:
                                 for column in range(len(row)):
-                                    cells.append(row[column])
+                                    cells.append(row[column].replace("-","_"))
 
                             filewriter.writerow(cells)
